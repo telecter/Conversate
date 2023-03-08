@@ -4,6 +4,6 @@ const app: Application = new Application();
 
 
 app.get("/fetch", (c) => {
-    return fetchMessages();
+    return "heyy";
 })
   .start({ port: 8000 });
