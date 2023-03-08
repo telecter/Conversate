@@ -3,8 +3,7 @@ import { fetchMessages } from "./client.ts";
 const app: Application = new Application();
 
 
-app
-  .get("/fetch", (c) => {
-    return fetchMessages;
-  })
+app.get("/fetch", (c) => {
+    return fetchMessages();
+})
   .start({ port: 8000 });
