@@ -1,9 +1,4 @@
-import { Application } from "https://deno.land/x/abc@v1.3.3/mod.ts";
+import { serve } from "https://deno.land/std@0.136.0/http/server.ts";
 import { fetchMessages } from "./client.ts";
 
-const app: Application = new Application();
-
-app.get("/fetch", (c) => {
-    return fetchMessages();
-})
-  .start({ port: 8000 });
+serve((req: Request) => new Response(fetchMessages()));
